@@ -1,12 +1,26 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
+import EmployeeService from '../services/EmployeeService'
 
 const ListEmployeeComponent = () => {
-  const[employees] = useState([])
-    return (
+  const[employees,setEmployees] = useState([])
+
+  useEffect(() => {
+    EmployeeService.getAllEmployees().then((response) => {
+        setEmployees(response.data);
+        console.log(response.data);
+    }).catch((error) => {
+        console.error('There was an error!', error);
+    });
+  }, []);
+
+
+
+  return (
     <div className='container'>
         <h2 className='text-center'>Employees List</h2>
         <table className='table-striped table-bordered'>
             <thead>
+                <tr>
                 <th>
                     Employee Id
                 </th>
@@ -19,6 +33,7 @@ const ListEmployeeComponent = () => {
                 <th>
                     Employee Email Id
                 </th>
+                </tr>
             </thead>
             <tbody>
                 {

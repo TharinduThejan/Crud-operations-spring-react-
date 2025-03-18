@@ -20,10 +20,10 @@ public class CrudOperationsApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Employee employee=new Employee();
-		employee.setFirstName("John");
-		employee.setLastName("Smith");
-		employee.setEmailId("john.smith@gmail.com");
-		employeeRepository.save(employee);
+//		Employee employee=new Employee();
+//		employee.setFirstName("John");
+//		employee.setLastName("Smith");
+//		employee.setEmailId("john.smith@gmail.com");
+//		employeeRepository.save(employee);
 	}
 }
