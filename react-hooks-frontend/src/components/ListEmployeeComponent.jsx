@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import EmployeeService from '../services/EmployeeService'
+import { HeaderComponent } from './HeaderComponent'
+import { FooterComponent } from './FooterComponent'
 
 const ListEmployeeComponent = () => {
   const[employees,setEmployees] = useState([])
@@ -18,7 +20,7 @@ const ListEmployeeComponent = () => {
   return (
     <div className='container'>
         <h2 className='text-center'>Employees List</h2>
-        <table className='table-striped table-bordered'>
+        <table className='table table-striped table-bordered'>
             <thead>
                 <tr>
                 <th>
