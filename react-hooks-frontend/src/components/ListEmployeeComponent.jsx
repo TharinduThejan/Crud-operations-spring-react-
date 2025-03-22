@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react'
 import EmployeeService from '../services/EmployeeService'
 import { HeaderComponent } from './HeaderComponent'
 import { FooterComponent } from './FooterComponent'
+import { Link } from 'react-router-dom';
+
 
 const ListEmployeeComponent = () => {
   const[employees,setEmployees] = useState([])
@@ -20,6 +22,7 @@ const ListEmployeeComponent = () => {
   return (
     <div className='container'>
         <h2 className='text-center'>Employees List</h2>
+        <Link to="/add-employee" className="btn btn-primary mb-2">Add Employee</Link>
         <table className='table table-striped table-bordered'>
             <thead>
                 <tr>
