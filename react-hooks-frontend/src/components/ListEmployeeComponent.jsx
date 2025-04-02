@@ -47,7 +47,13 @@ const ListEmployeeComponent = () => {
                   to={`/edit-employee/${employee.id}`}
                 >
                   Update
-                </Link>{" "}
+                </Link>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => deleteEmployee(employee.id)}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
